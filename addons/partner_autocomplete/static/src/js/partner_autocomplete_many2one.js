@@ -81,4 +81,7 @@ PartnerAutoCompleteMany2one.components = {
     Many2XAutocomplete: PartnerMany2XAutocomplete,
 }
 
-registry.category("fields").add("res_partner_many2one", PartnerAutoCompleteMany2one);
+// web may register the plain many2one under this name: replace it
+registry.category("fields").add("res_partner_many2one", PartnerAutoCompleteMany2one, {
+    force: true,
+});
